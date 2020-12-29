@@ -1,0 +1,16 @@
+<header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+        <%= link_to "Bloogie", blogs_path, class: "navbar-brand" %>
+        
+        <!-- Links -->
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <%= link_to "All Blogs", blogs_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "New Blogs", new_blog_path, class: "nav-link" %>
+            </li>
+        </ul>
+    </nav>
+</header>

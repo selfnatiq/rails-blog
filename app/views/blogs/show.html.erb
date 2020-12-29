@@ -1,0 +1,19 @@
+<%= render partial: "blogs/alert", locals: {type: "success", alerts: [notice]} if notice %>
+<div class="card">
+    <div class="card-header">
+        <h2><%= @blog.title %></h2>
+    </div>
+    <div class="card-body">
+        <%= @blog.body %>
+    </div>
+    <div class="card-footer">
+        <div>
+            <span><%= @blog.author %></span> |
+            <i><%= @blog.created_at.to_date %></i>
+        </div>
+    </div>
+</div>
+
+
+<%# <%= link_to("Previous Blog", @blog.previous) if @blog.previous %>
+<%# <%= link_to("Next Blog", @blog.next) if @blog.next %>

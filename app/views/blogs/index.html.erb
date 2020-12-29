@@ -1,0 +1,26 @@
+<h1>Welcome to Bloogie</h1>
+<i class="text-secondary">Listing <%= pluralize(@blogs.length, "blog") %></i>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Created at</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @blogs.each do |blog| %>
+            <tr>
+                <td><%= link_to blog.title, blog_path(blog) %></td>
+                <td><%= blog.author %></td>
+                <td><%= blog.created_at.to_date %></td>
+                <td>
+                    <%= link_to "Edit", edit_blog_path(blog.id), class: "btn btn-sm btn-outline-warning" %>
+                    <%= link_to "Delete", blog_path(blog), class: "btn btn-sm btn-outline-danger", data: { method: :delete, confirm: "Are you sure?"} %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
